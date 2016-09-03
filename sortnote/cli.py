@@ -5,7 +5,7 @@ from cronmanager import *
 def cli():
 
   parser = argparse.ArgumentParser(prog='sortnote', description='Brings order to a chaotic world.')
-  parser.add_argument('mode', choices=['enable', 'disable', 'run', 'reset'], help='Setups cron job for this directory')
+  parser.add_argument('mode', choices=['enable', 'disable', 'run', 'reset', 'status'], help='Setups cron job for this directory')
   parser.add_argument('directory', nargs="?")
   
   parser.add_argument('-d', '--dry',action='store_true', help='Dry run: Do not rename files, only print')
@@ -16,6 +16,10 @@ def cli():
 
   if args.mode == "reset":
     CronDeleteAll()
+    return
+  elif args.mode == "status":
+    CronStatus()
+    return
 
   if not args.directory:
     parser.error("Needs directory")

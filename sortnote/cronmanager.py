@@ -3,7 +3,7 @@ from crontab import CronTab
 import os
 
 def id():
-  return "sortnote"
+  return "sortnote: "
 
 def CronDeleteAll():
   cron = CronTab(user=True)
@@ -11,6 +11,17 @@ def CronDeleteAll():
   for job in toDelete:
     cron.remove(job)
   cron.write()
+
+def CronStatus():
+  cron = CronTab(user=True)
+  activeJobs = [job.comment.replace(id(), '') for job in cron if isSortNoteJob(job)]
+  if len(activeJobs) == 0:
+    print "No active jobs."
+  else:
+    print "Active jobs:"
+  
+  for job in activeJobs:
+    print job
 
 def isSortNoteJob(job): 
   return id() in job.comment
@@ -35,6 +46,6 @@ class CronManager(object):
     self.cron.write()
 
   def id(self):
-    return id() + ": " + self.directory
+    return id() + self.directory
 
 
