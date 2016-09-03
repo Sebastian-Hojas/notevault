@@ -1,7 +1,7 @@
 I love to take notes and capture memories in an uncomplicated manner. Often I only take a screenshot or safe a file and store it in a folder. 
-This little tool helps me to keep my memory faults clean. Whenever a new file is added to the folder, it renames the file to `yyyy_MM_dd_filename`. The date is calculated from the file creation date, and for OSX screenshots the parsed date from the filename.
+This little tool helps me to keep my memory vaults clean. Whenever a new file is added to the folder, it renames the file to `yyyy_MM_dd_filename`. The date is calculated from the file creation date, and for OSX screenshots the parsed date from the filename.
 
-![example](./raw/example.png)
+![example](https://github.com/Sebastian-Hojas/sortnote/blob/master/raw/example.png)
 
 ## Usage
 
