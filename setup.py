@@ -5,9 +5,8 @@ setup(
     version='0.1.0',
     author='Sebastian Hojas',
     author_email='later@irrelevant.at',
-    packages=['sortnote', 'sortnote.test'],
-    # scripts=['bin/stowe-towels.py','bin/wash-towels.py'],
-    url='http://pypi.python.org/pypi/sortnote/',
+    packages=['notevault', 'notevault.test'],
+    url='http://pypi.python.org/pypi/notevault/',
     license='LICENSE.txt',
     description='Brings order to a world of chaos.',
     long_description=open('README.md').read(),
@@ -15,6 +14,6 @@ setup(
         "python-crontab >= 2.1.1",
     ],
     entry_points = {
-        "console_scripts": ['sortnote = sortnote.__main__:main']
+        "console_scripts": ['notevault = notevault.__main__:main']
     },
 )

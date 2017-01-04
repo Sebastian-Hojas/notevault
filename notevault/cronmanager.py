@@ -3,7 +3,7 @@ from crontab import CronTab
 import os
 
 def id():
-  return "sortnote: "
+  return "notevault: "
 
 def CronDeleteAll():
   cron = CronTab(user=True)
@@ -34,7 +34,7 @@ class CronManager(object):
 
   def addCron(self):
     self.deleteCron()
-    job = self.cron.new(command='sortnote -Y ' + self.directory)
+    job = self.cron.new(command='notevault -Y run ' + self.directory)
     job.set_comment(self.id())
     job.every().hour()
     self.cron.write()
