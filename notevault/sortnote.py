@@ -5,7 +5,7 @@ import re
 from sys import platform
 
 class Sortnote:
-  def __init__(self, directory, dryrun=False, verbose=False):
+  def __init__(self, directory, dryrun, verbose):
     self.dir = directory
     self.dryrun = dryrun
     self.verbose = verbose
